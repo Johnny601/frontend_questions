@@ -30,9 +30,23 @@ body {
   min-height: 100vh;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-top: 10px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0;
+  line-height: 1.3;
 }
 
 #app {
@@ -42,17 +56,86 @@ h1 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #3c4c67;
+  border-radius: 10px;
+  width: 250px;
+  padding: 10px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.score-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  width: 270px;
+  background: #3c4c67;
+  border-radius: 10px;
+  margin: 16px auto 0;
 }
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+
+header {
+  max-width: 700px;
+  height: 50px;
+}
+
+section {
+  display: flex;
+}
+
+#section-left {
+  width: 350px;
+  text-align: left;
+}
+
+#section-right {
+  width: 350px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-container {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+img {
+  padding: 0;
+  margin: 0;
+}
+
+.option-text {
+  text-align: left;
+  font-weight: 600;
+  font-size: small;
+}
+
+.subject-category {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.question-number {
+  margin: 0;
+  font-size: small;
+  opacity: 0.5;
+}
+
+.text-img {
+  font-weight: 600;
+  width: 25px;
+  height: 25px;
+  color: gray;
 }
 
 .card {
@@ -63,14 +146,22 @@ h1 {
   color: #888;
 }
 
+.button-container {
+  display: flex;
+  width: 270px;
+  margin: auto;
+}
+
 button {
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 10px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  margin-top: 5px;
+  padding: 7px 0px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #646cff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -82,7 +173,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="radio"]:checked ~ label {
+  border: 1px solid #646cff;
+}
+
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -92,5 +192,15 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+} */
+
+@media (max-width: 600px) {
+  body {
+    place-items: normal;
+  }
+
+  section {
+    flex-direction: column;
   }
 }
